@@ -1,14 +1,5 @@
-import subprocess
-import sys
-
-# Check if sweetviz is installed, if not, install it
-try:
-    import sweetviz as sv
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "sweetviz"])
-    import sweetviz as sv
-
 import pandas as pd
+import sweetviz as sv
 from pandas_profiling import ProfileReport
 import streamlit as st
 
@@ -69,7 +60,7 @@ def process_file(uploaded_file):
         pandas_profile = ProfileReport(df, title="Pandas Profiling Report", explorative=True)
         pandas_profile_file = "pandas_profiling_report.html"
         pandas_profile.to_file(pandas_profile_file)
-        st.write(f"Pandas profiling report generated: [Download Pandas Profiling Report](./{pandas_profiling_report_file})")
+        st.write(f"Pandas profiling report generated: [Download Pandas Profiling Report](./{pandas_profile_file})")
 
     except Exception as e:
         st.write(f"An error occurred: {e}")

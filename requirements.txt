@@ -2,3 +2,4 @@ pandas
 sweetviz
 pandas-profiling
 streamlit
+setuptools

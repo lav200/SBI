@@ -1,6 +1,0 @@
-pandas
-sweetviz
-pandas-profiling
-streamlit
-setuptools
-pydantic==1.10
